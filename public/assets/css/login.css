@@ -1,0 +1,111 @@
+/* IMPOTAR COLORES */
+@import url(./Utils/variables.css);
+
+.user_card {
+    margin-top: auto;
+    margin-bottom: auto;
+    background: var(--color-blanco);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--color-blanco);
+    background-color: var(--color-blanco);
+    border-color: var(--color-azul);
+    border-width: 3px;
+}
+
+.brand_logo_img {
+    height: 110px;
+    width: 110px;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.login_btn {
+    width: 80%;
+    background: var(--color-azul) !important;
+    color: var(--color-blanco) !important;
+    border: 0px;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+    color: red;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: var(--color-azul) !important;
+    color: var(--color-blanco) !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.principal {
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+}
+
+.links {
+    font-size: var(--font-size-md);
+}
+
+.barraNaranja {
+    background-color: #FE9001;
+    color: transparent;
+    border-radius: 0px 0px 5px 5px;
+    height: 10px;
+}
+
+.candado {
+    cursor: pointer;
+}
+
+
+/* PARTICULAS DE CSS */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    background: url(../../../public/assets/images/img/WorldMap.svg) !important;
+    background-position: center;
+    /* background-repeat: no-repeat;
+    background-position: -80px; */
+}

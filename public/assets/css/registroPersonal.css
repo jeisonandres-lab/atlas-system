@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Poppins" !important;
+  src: url("../../assets/fonts/Poppins-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+}
+
+.row {
+  margin: 0px !important;
+}
+
+.card-header {
+  padding-bottom: 8.5px !important;
+  border: 0px !important;
+}
+.card-header a {
+  border: 0px !important;
+}
+
+.containerImg img {
+  border-radius: 20px;
+}
+
+fieldset div .form-group {
+  font-weight: 300;
+}
+
+.mostrar-boton-imagen {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .containerImg {
+    display: none !important;
+  }
+
+  .mostrar-boton-imagen {
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  body .app-main {
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+

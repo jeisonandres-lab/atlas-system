@@ -1,0 +1,17 @@
+{
+    "name": "inces/atlas",
+    "autoload": {
+        "psr-4": {
+            "App\\Atlas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jeison balduz",
+            "email": "balduzjeison@gmail.com"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}
