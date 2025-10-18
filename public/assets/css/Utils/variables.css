@@ -10,7 +10,6 @@
     --color-blanco: #FFFFFF;
     --color-negro: #000000;
     --color-azul: #1929bb;
-    
     --color-text:#3F435D;
 
     /* Menu lateral */
@@ -45,7 +44,7 @@
 
 
 
-
+/* 
 
     --color-blanco: #fff;
     --color-blanco-contenido: #fff;
@@ -75,7 +74,7 @@
     --color-texto-gris-claro: #6e829f;
 
     /* COLORES PARA LOS BOTONES DE LAS TABLAS */
-    --buttonVerde: #01bd0a;
+    /* --buttonVerde: #01bd0a;
     --buttonVerdeHover: #019e08;
     --buttonRojo: #FF0000;
     --buttonRojoHover: #c71313;
@@ -84,7 +83,7 @@
     --buttonAzulClaro: #2980b9;
     --buttonAzulClaroHover: #1020ad;
     --buttonAmarillo: #FE9001;
-    --buttonAmarilloHover: #f47e00;
+    --buttonAmarilloHover: #f47e00;  */
 }
 
 /* :root {

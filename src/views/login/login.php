@@ -8,10 +8,13 @@
     <meta name="description" content="Inicia sesión en tu cuenta para acceder a todas las funcionalidades de ATLAS, nuestro sistema de gestión de recursos humanos">
     <title>Inicio de Sesión | ATLAS</title>
     <?php require_once App::URL_lAYOUTS . "cssGlobal.php"; ?>
-     <link rel="stylesheet" href="<?php echo App::URL_CSS . "login.css"; ?>">
+    <link rel="stylesheet" href="<?php echo App::URL_CSS . "login.css"; ?>">
+    <link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/loading.css"; ?>">
+
 </head>
 
 <body>
+    <?php require_once App::URL_lAYOUTS . "loader.php";?>
     <main class="principal container-fluid">
         <section class="h-100 d-flex justify-content-center align-items-center" aria-label="Formulario de inicio de sesión">
             <article class="col-md-3 col-sm-8 user_card">
@@ -23,22 +26,22 @@
                     </div>
                 </header>
                 <div class="d-flex justify-content-center align-items-center flex-column mt-5">
-                    <form class="formularioEnviar" method="POST" action="./src/ajax/userAjax.php" autocomplete="on" aria-label="Formulario de inicio de sesión">
+                    <form class="formularioEnviar" method="POST" autocomplete="on" aria-label="Formulario de inicio de sesión">
                         <div class="inicioSesion container-fluid d-flex justify-content-center mt-2">
                             <h1 class="text-muted h4">INICIO DE SESIÓN</h1>
                         </div>
                         <div class="mb-3 mt-3">
                             <div class="input-group mb-3">
                                 <label for="usuario" class="input-group-text d-flex"><i class="fa-regular fa-user"></i></label>
-                                <input type="text" name="usuario" id="usuario" class="form-control input_user px-3" placeholder="Usuario" autocomplete="username" required>
+                                <input type="text" name="usuario" id="usuario" class="form-control input_user px-3" placeholder="Usuario" autocomplete="username">
                             </div>
                             <div class="input-group">
                                 <label for="password" class="input-group-text d-flex candado" id="candado"><i class="password fa-solid fa-lock"></i></label>
-                                <input type="password" name="password" id="password" class="form-control input_pass px-3" placeholder="Contraseña" autocomplete="current-password" required>
+                                <input type="password" name="password" id="password" class="form-control input_pass px-3" placeholder="Contraseña" autocomplete="current-password" >
                             </div>
                         </div>
                         <div class="d-flex justify-content-center mt-3 mb-2 login_container">
-                            <button type="submit" name="button" class="btn btn-primary login_btn btn-hover-azul">Iniciar sesión</button>
+                            <button type="submit" name="button" class="btn btn-primary login_btn btn-hover-azul" id="boton__login">Iniciar sesión</button>
                         </div>
                     </form>
                     <div id="alert" role="alert" aria-live="polite"></div>
@@ -56,7 +59,12 @@
         </section>
     </main>
     <div id="particles-js" aria-hidden="true"></div>
+
+     <?php require_once App::URL_lAYOUTS . "scriptsGlobal.php"; ?>
     <script src="<?php echo App::URL_LIBRARY . "particles.js/particles.js"; ?>"></script>
-    <script src="<?php echo App::URL_LIBRARY . "crypto-js/crypto.js"; ?>"></script>
+    <script src="<?php echo App::URL_LIBRARY . "crypto-js/crypto.js"; ?>" defer></script>
+    <script type="module" src="<?php echo App::URL_SCRIPS . "login.js" ?>" defer></script>
+
 </body>
+
 </html>

@@ -13,26 +13,9 @@ class AuthController
         $this->usuarioModel = new UsuarioModelPublic();
     }
 
-    private function readInput(): array
+    public function login(string $usuario, string $contrasena) :void
     {
-        $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
-        if (stripos($contentType, 'application/json') !== false) {
-            $data = json_decode(file_get_contents('php://input'), true);
-            return is_array($data) ? $data : [];
-        }
-        // form-data / application/x-www-form-urlencoded
-        return $_POST ?? [];
-    }
-
-    public function login()
-    {
-        header('Content-Type: application/json; charset=utf-8');
-
-        $input = $this->readInput();
-
-        $usuario = isset($input['usuario']) ? trim($input['usuario']) : '';
-        $contrasena = isset($input['contrasena']) ? trim($input['contrasena']) : '';
-
+       
         if ($usuario === '') {
             http_response_code(400);
             echo json_encode(['ok' => false, 'error' => 'usuario_vacio', 'message' => 'Campo usuario vacío']);

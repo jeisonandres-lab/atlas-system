@@ -3,7 +3,7 @@
 <link rel="icon" href="<?php echo App::URL_ICONS."favicon.webp";?>" type="image/x-icon"/>
 
 <!-- BOOTSTRAP 5 -->
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY . 'bootstrap/css/bootstrap.min.css'; ?>">
+<link rel="stylesheet" href="<?php echo App::URL_LIBRARY . 'bootstrap/css/bootstrap.min.css'; ?>" media="print" onload="this.media='all'">
 
 <!-- ICONOS DE FONTAWESOME  -->
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all.min.css";?>"/>
@@ -14,3 +14,4 @@
 
 <!-- CSS MULTI FORMULARIO -->
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."multiFrom/css/style.css"?>"/>
+

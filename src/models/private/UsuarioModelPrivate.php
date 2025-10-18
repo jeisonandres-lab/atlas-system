@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Atlas\models\private;
 
 use App\Atlas\config\EjecutarSQL;
@@ -10,13 +11,13 @@ class UsuarioModelPrivate extends EjecutarSQL
     {
         $sql = $this->ejecutarConsulta(
             "SELECT 
-            us.nameUser, 
-            us.userPassword, 
-            us.saltPass, 
-            us.activo, 
-             FROM users us
-             WHERE nameUser = ?
-             LIMIT 1",
+                us.nameUser, 
+                us.userPassword, 
+                us.saltPass, 
+                us.activo 
+                FROM users us
+                WHERE nameUser = ?
+                LIMIT 1",
             [$user]
         );
 

@@ -9,13 +9,14 @@ class App
     public const APP_URL = "http://localhost/atlas/";
     public const URL_LIBRARY = "./src/lib/";
     public const URL_lAYOUTS = "./src/views/layouts/";
-    
+
     public const URL_IMG = "./public/assets/images/img/";
     public const URL_ICONS = "./public/assets/images/icons/";
-     public const URL_CSS = "./public/assets/css/";
-
-    public const URL_INC = "./src/views/incluir/";
-    public const URL_SCRIPS = "./src/assets/js/";
+    public const URL_CSS = "./public/assets/css/";
+    public const URL_SCRIPS = "./public/assets/js/";
+    
+ 
+    
     
    
   
