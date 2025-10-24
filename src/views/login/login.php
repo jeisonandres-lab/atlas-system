@@ -1,4 +1,6 @@
-<?php use App\Atlas\config\App; ?>
+<?php
+
+use App\Atlas\config\App; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,63 +10,78 @@
     <meta name="description" content="Inicia sesión en tu cuenta para acceder a todas las funcionalidades de ATLAS, nuestro sistema de gestión de recursos humanos">
     <title>Inicio de Sesión | ATLAS</title>
     <?php require_once App::URL_lAYOUTS . "cssGlobal.php"; ?>
-    <link rel="stylesheet" href="<?php echo App::URL_CSS . "login.css"; ?>">
+    <link rel="stylesheet" href="<?php echo App::URL_CSS . "login2.css"; ?>">
     <link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/loading.css"; ?>">
 
 </head>
 
 <body>
-    <?php require_once App::URL_lAYOUTS . "loader.php";?>
-    <main class="principal container-fluid">
-        <section class="h-100 d-flex justify-content-center align-items-center" aria-label="Formulario de inicio de sesión">
-            <article class="col-md-3 col-sm-8 user_card">
-                <header class="mt-5 mb-3 d-flex justify-content-center">
-                    <div class="brand_logo_container">
-                        <div class="brand_logo d-flex align-items-center justify-content-center">
-                            <img src="<?php echo App::URL_IMG . 'logo_atlas.png'; ?>" class="brand_logo_img" alt="Logo ATLAS">
-                        </div>
-                    </div>
-                </header>
-                <div class="d-flex justify-content-center align-items-center flex-column mt-5">
-                    <form class="formularioEnviar" method="POST" autocomplete="on" aria-label="Formulario de inicio de sesión">
-                        <div class="inicioSesion container-fluid d-flex justify-content-center mt-2">
-                            <h1 class="text-muted h4">INICIO DE SESIÓN</h1>
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <div class="input-group mb-3">
-                                <label for="usuario" class="input-group-text d-flex"><i class="fa-regular fa-user"></i></label>
-                                <input type="text" name="usuario" id="usuario" class="form-control input_user px-3" placeholder="Usuario" autocomplete="username">
-                            </div>
-                            <div class="input-group">
-                                <label for="password" class="input-group-text d-flex candado" id="candado"><i class="password fa-solid fa-lock"></i></label>
-                                <input type="password" name="password" id="password" class="form-control input_pass px-3" placeholder="Contraseña" autocomplete="current-password" >
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center mt-3 mb-2 login_container">
-                            <button type="submit" name="button" class="btn btn-primary login_btn btn-hover-azul" id="boton__login">Iniciar sesión</button>
-                        </div>
-                    </form>
-                    <div id="alert" role="alert" aria-live="polite"></div>
-                </div>
-                <footer class="mt-4">
-                    <div class="d-flex justify-content-center links">
-                        <span>¿Olvidaste los datos de tu cuenta?</span>
-                    </div>
-                    <div class="d-flex justify-content-center links">
-                        <a href="recuperarDatos"><i class="fa-solid fa-arrow-right me-2"></i>Recuperar Datos</a>
-                    </div>
-                </footer>
-                <div class="barraNaranja" aria-hidden="true"></div>
-            </article>
-        </section>
-    </main>
-    <div id="particles-js" aria-hidden="true"></div>
+    <?php require_once App::URL_lAYOUTS . "loader.php"; ?>
+    <div class=" brand_logo d-flex align-items-center justify-content-center ">
 
-     <?php require_once App::URL_lAYOUTS . "scriptsGlobal.php"; ?>
-    <script src="<?php echo App::URL_LIBRARY . "particles.js/particles.js"; ?>"></script>
+    </div>
+    <div class='box'>
+        <div class='box-form'>
+            <div class='box-login-tab'></div>
+            <div class='box-login-title'>
+                <img src="<?php echo App::URL_IMG . 'logo_atlas.png'; ?>" class="brand_logo_img" alt="Logo">
+                <!-- <div class='i i-login'><i class="fa-solid fa-xmark"></i></div> -->
+                <h2>ATLAS</h2>
+            </div>
+            <div class='box-login'>
+                <form action="#" class="formularioEnviar">
+                    <div class='fieldset-body d-flex flex-column' id='login_form'>
+                        <div class="d-flex w-100 justify-content-end">
+                            <button type="button" onclick="openLoginInfo();" class='b b-form i i-more d-flex g-5'>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+
+
+                        <div class="title-login mb-2">
+                            <h2 class="">LOGIN</h2>
+                        </div>
+                        <p class='field'>
+                            <label for='usuario'>CORREO ELECTRÓNICO</label>
+                            <input type='text' id='usuario' name='user' />
+                            <span id='valida' class='i i-warning'></span>
+                        </p>
+                        <p class='field'>
+                            <label for='password'>CONTRASEÑA</label>
+                            <input type='password' id='password' name='pass' class='password__input' />
+                            <span id='valida' class='i i-close'><i class="fa-solid fa-eye password"></i></span>
+                        </p>
+
+                        <!-- <label class='checkbox'>
+                        <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+                    </label> -->
+                        <div class="dialogo">
+                            <p>sistema de<strong class="text-primary fw-bold"> gestión</strong> del departamento Talento Humanos <strong class="text-danger fw-bold">INCES</strong> </p>
+                        </div>
+                        <input class="" type='submit' id='do_login' value='INICIAR' />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class='box-info'>
+            <div class="box-info-header">
+                <button onclick="closeLoginInfo();" class='b b-info i i-left' aria-label="Cerrar información">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3>¿Necesitas ayuda?</h3>
+            </div>
+            <div class='line-wh'></div>
+            <button onclick="" class='b-support btn-hover-azul'> ¿Olvidaste tu contraseña?</button>
+            <button onclick="" class='b-support btn-hover-azul'> Contactar con soporte</button>
+            <div class='line-wh'></div>
+            <button onclick="" class='b-cta btn-hover-azul'>SOLICITAR CUENTA</button>
+        </div>
+    </div>
+
+
+    <?php require_once App::URL_lAYOUTS . "scriptsGlobal.php"; ?>
     <script src="<?php echo App::URL_LIBRARY . "crypto-js/crypto.js"; ?>" defer></script>
     <script type="module" src="<?php echo App::URL_SCRIPS . "login.js" ?>" defer></script>
-
 </body>
 
 </html>

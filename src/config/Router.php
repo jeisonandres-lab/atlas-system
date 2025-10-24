@@ -2,11 +2,17 @@
 
 require __DIR__ . '../../../vendor/autoload.php';
 
+// Normalizar /atlas3 o /atlas3/ a /atlas3/login (redirigir)
+
+
 define('BASE_PATH', dirname(__DIR__, 2)); // Esto te da c:\xampp\htdocs\atlas3
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     // Ruta raíz
-    $r->addRoute('GET', '/atlas3/', '/src/views/login/login.php');
+    $r->addRoute('GET', '/atlas3/', '');
+    $r->addRoute('GET', '/atlas3/login', '/src/views/login/login.php');
+
+    // Ruta para el dashboard
 
     // Puedes agregar más rutas aquí si lo deseas
 });
@@ -34,9 +40,12 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-        // ... call $handler with $vars
-        //  print_r($vars);
-        //  print_r($handler);
+       
+        if ($uri === '/atlas3' || $uri === '/atlas3/') {
+            // redirección permanente (cambiar a 302 si prefieres temporal)
+            header('Location: /atlas3/login', true, 301);
+            exit;
+        }
 
         require BASE_PATH . $handler;
         break;

@@ -16,18 +16,6 @@ class AuthController
     public function login(string $usuario, string $contrasena) :void
     {
        
-        if ($usuario === '') {
-            http_response_code(400);
-            echo json_encode(['ok' => false, 'error' => 'usuario_vacio', 'message' => 'Campo usuario vacío']);
-            return;
-        }
-
-        if ($contrasena === '') {
-            http_response_code(400);
-            echo json_encode(['ok' => false, 'error' => 'contrasena_vacia', 'message' => 'Campo contraseña vacío']);
-            return;
-        }
-
         $user = $this->usuarioModel->getExisteUsuario($usuario);
 
         if (!$user) {
