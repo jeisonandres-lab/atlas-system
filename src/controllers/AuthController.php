@@ -34,7 +34,13 @@ class AuthController
         }
 
         // Guardar datos de usuario en sesión
-        $_SESSION['user'] = $user;
+        $_SESSION['user'] = $user['nameUser'];
+        $_SESSION['activo'] = $user['activo'];
+        $_SESSION['cedula'] = $user['cedula'];
+        $_SESSION['rol'] = $user['rol'];
+        $_SESSION['primerNombre'] = $user['primerNombre'];
+        $_SESSION['primerApellido'] = $user['primerApellido'];
+        
 
         // Construir respuesta leyendo el array con foreach
         $userData = [];
@@ -44,7 +50,7 @@ class AuthController
 
         echo json_encode([
             'ok' => true,
-            'user' => $userData
+            'user' =>  $userData
         ]);
     }
 }

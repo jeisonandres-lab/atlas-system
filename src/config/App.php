@@ -6,14 +6,17 @@ class App
     /**
      * Rutas de la aplicación
      */
-    public const APP_URL = "http://localhost/atlas/";
-    public const URL_LIBRARY = "./src/lib/";
-    public const URL_lAYOUTS = "./src/views/layouts/";
+    public const APP_URL = "http://localhost/atlas/"; // Cambiar según sea necesario
+    
+    public const URL_LIBRARY = "./src/lib/"; // Librerías de terceros 
+    public const URL_lAYOUTS = "./src/views/layouts/"; // Layouts de la aplicación
+    public const URL_FILES = "./src/global/archives/"; // Archivos de la aplicación
+    public const URL_FILES_PHOTOS = "./src/global/photos/"; // Fotos de la aplicación
 
-    public const URL_IMG = "./public/assets/images/img/";
-    public const URL_ICONS = "./public/assets/images/icons/";
-    public const URL_CSS = "./public/assets/css/";
-    public const URL_SCRIPS = "./public/assets/js/";
+    public const URL_IMG = "./public/assets/images/img/"; // Imágenes de la aplicación
+    public const URL_ICONS = "./public/assets/images/icons/"; // Iconos de la aplicación
+    public const URL_CSS = "./public/assets/css/"; // Estilos de la aplicación
+    public const URL_SCRIPS = "./public/assets/js/"; // Scripts de la aplicación
     
  
     

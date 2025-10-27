@@ -6,14 +6,18 @@
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY . 'bootstrap/css/bootstrap.min.css'; ?>" media="print" onload="this.media='all'">
 
 <!-- ICONOS DE FONTAWESOME  -->
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all.min.css";?>"/>
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/js/all.min.js";?>"/>
+<!-- <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all.min.css";?>"/>
+<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/js/all.min.js";?>"/> -->
+
+
+<!-- ICONOS DE FONTAWESOME  -->
+<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/@fortawesome/fontawesome-free/css/all.css";?>"/>
 
 <!-- CSS DE SWEETALERT2 DE ALERTAS -->
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."sweetalert2/sweetalert2.min.css";?>"/>
 
-<!-- CSS MULTI FORMULARIO -->
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."multiFrom/css/style.css"?>"/>
-
+<!--EFECTOS HOVER DE LOS BOTONES -->
 <link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/botones-hover.css"; ?>">
 
+<!-- CSS LOADING -->
+<link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/loading.css"; ?>">

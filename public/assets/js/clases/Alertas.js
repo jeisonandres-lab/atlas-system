@@ -19,21 +19,30 @@ class Alertas {
   }
 
   // equivalente a AlertMix(original)
-  AlertMix(icon = 'info', messenger = '', position = this.defaultPosition, time = 3000) {
+  AlertMix(icon = 'info', messenger = '', position = this.defaultPosition, time = 3000,  callback) {
     const Toast = Swal.mixin({
-      toast: true,
-      position: position,
-      showConfirmButton: false,
-      timer: time,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-      }
+        toast: true,
+        position: position,
+        showConfirmButton: false,
+        timer: time,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
     });
     Toast.fire({
-      icon: icon,
-      title: messenger
+        icon: icon,
+        title: messenger
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+            callback();
+        } else {
+            console.log("no se logro realizar ninguna accion");
+        }
+    }).catch((error) => {
+        // Manejar errores que puedan ocurrir durante Swal.fire o cualquier otra operación asincrónica
+        console.error("Error occurred:", error);
     });
   }
 

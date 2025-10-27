@@ -1,20 +1,19 @@
 import HttpClient from './clases/HttpClient.js';
 import Alertas from './clases/Alertas.js';
 import { qs, qsa } from './utils/dom.js';
+import { showSpinner, hideSpinner} from './utils/leading.js';
 
 const AlertasClient = new Alertas(); // instancia de Alertas
 const client = new HttpClient(); // instancia de HttpClient
 
+
 // manejarVisibilidadPassword alterna el tipo del input password y cambia el icono
 function manejarVisibilidadPassword() {
   document.addEventListener('click', (e) => {
-
-
     const inputpass = e.target.closest('.password__input');
     if (inputpass) {
       qs('.i-close').style.display = 'block';
     }
-
     const btn = e.target.closest('.password');
     if (!btn) return;
     const pwd = qs('#password');
@@ -47,15 +46,6 @@ function closeLoginInfo() {
 window.openLoginInfo = openLoginInfo;
 window.closeLoginInfo = closeLoginInfo;
 
-// ocultar spans de estado
-function ocultarSpansEn(element) {
-  if (!element) return;
-  element.qsa('span').forEach(s => {
-    s.style.display = 'none';
-    s.classList.remove('i-warning');
-  });
-}
-
 // manejarEnvioFormulario enviar la petición de login al backend
 async function manejarEnvioFormulario(e) {
   e.preventDefault();
@@ -79,53 +69,48 @@ async function manejarEnvioFormulario(e) {
   }
 
   try {
+    showSpinner();
     const payload = { usuario, password };
+    
     const res = await client.post('src/requests/auth.php?modulo_usuario=logear', payload);
 
-    // Si tu HttpClient ya devuelve { status, data } mantenlo; si no, adapta para obtener status y body
+    //  Si tu HttpClient ya devuelve { status, data } mantenlo; si no, adapta para obtener status y body
     const status = res?.status ?? 0;
     const data = res?.data ?? null;
 
     if (status === 200 && data && data.ok) {
+      hideSpinner();
       const user = data.user || {};
       if (user.activo === 1) {
-        AlertMix('success', `Bienvenido ${user.nameUser}`, 'top', 3000);
+       
+        AlertasClient.AlertMix('success', `Bienvenido ${user.nameUser}`, 'top', 3000, () => {window.location.replace("inicio");});
         if (usuarioInput) usuarioInput.style.border = '1px solid #198754';
         if (passwordInput) passwordInput.style.border = '1px solid #198754';
-        // window.location.replace('inicio');
+        // ;
       } else {
-        AlertMix('warning', 'Este usuario ya está activo', 'top', 4000);
+        AlertasClient.AlertMix('warning', 'Este usuario ya está activo', 'top', 4000);
       }
       return;
     }
 
   } catch (err) {
-    console.error('Login error:', err.status);
+    console.error('Login error:', err);
     // Manejo de 401 u otros estados
     if (err.status === 401) {
-      AlertMix('error', err.data.message, 'top', 4000);
+      AlertasClient.AlertMix('error', err.data.message, 'top', 4000);
 
       if (usuarioInput) usuarioInput.style.border = '1px solid #dc3545';
       if (passwordInput) passwordInput.style.border = '1px solid #dc3545';
       return;
     }
-    AlertMix('error', err.data.message, 'top', 3000);
+    AlertasClient.AlertMix('error', err.data.message, 'top', 3000, "");
   }
 }
 
 // Inicialización de listeners y configuración inicial
 function inicializar() {
   const form = qs('.formularioEnviar');
-  const loginBtn = qs('#do_login');
   if (form) form.addEventListener('submit', manejarEnvioFormulario);
-
-  if (loginBtn) {
-    loginBtn.addEventListener('click', () => {
-      // Solo UI: cerrar info y ocultar spans en el contenedor del botón
-      closeLoginInfo();
-      ocultarSpansEn(loginBtn.parentElement);
-    });
-  }
 
   // animaciones iniciales (solo visual)
   openLoginInfo();

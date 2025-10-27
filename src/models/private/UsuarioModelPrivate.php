@@ -14,8 +14,15 @@ class UsuarioModelPrivate extends EjecutarSQL
                 us.nameUser, 
                 us.userPassword, 
                 us.saltPass, 
-                us.activo 
+                us.activo,
+                r.rol,
+                dtp.cedula,
+                dtp.primerNombre,
+                dtp.primerApellido
                 FROM users us
+                INNER JOIN rol r ON us.idRol = r.id_rol
+                INNER JOIN datosempleados dte ON us.idEmpleado = dte.id_empleados
+                INNER JOIN datospersonales dtp ON dte.idPersonal = dtp.id_personal
                 WHERE nameUser = ?
                 LIMIT 1",
             [$user]

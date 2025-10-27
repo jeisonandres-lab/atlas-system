@@ -16,7 +16,7 @@ use App\Atlas\config\App; ?>
 </head>
 
 <body>
-    <?php require_once App::URL_lAYOUTS . "loader.php"; ?>
+    <?php require_once App::URL_lAYOUTS . "./utils/loader.php"; ?>
     <div class=" brand_logo d-flex align-items-center justify-content-center ">
 
     </div>
