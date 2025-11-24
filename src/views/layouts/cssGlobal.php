@@ -11,7 +11,7 @@
 
 
 <!-- ICONOS DE FONTAWESOME  -->
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/@fortawesome/fontawesome-free/css/all.css";?>"/>
+<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all7.1.0.css";?>"/>
 
 <!-- CSS DE SWEETALERT2 DE ALERTAS -->
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."sweetalert2/sweetalert2.min.css";?>"/>

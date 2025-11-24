@@ -1,209 +1,131 @@
-<!-- navbar -->
-<nav class="navbar app-header navbar " id="narvarPrincipal">
-    <div class="navbar_content me-3 ms-2">
-        <li class="nav-item d-flex align-items-center ps-5 activo-user" id="userActivo">
-            <div class="d-flex align-items-center py-1 px-2 rounded status-active badge bg-success-subtle text-success">
-                <i class="fa-regular fa-user-tie me-2"></i>
-                <span><?php echo ($_SESSION['activo'] == 1) ? 'Activo' : 'Desactivado'; ?></span>
-            </div>
-        </li>
-    </div>
-    <div id="contenedor-buscar" class="search_bar">
-        <input type="text" id="buscador" placeholder="Buscar" />
-        <div id="resultadosBusqueda"></div>
-    </div>
-    <div class="navbar_content list-icons me-3">
-        <li class="nav-item">
-            <a href="#" data-lte-toggle="fullscreen" class="conten-icons">
-                <i class='bx bx-fullscreen' data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
-                <!-- <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen" style="display: block;"></i> -->
-                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i>
-            </a>
-        </li>
-        <!-- <i class='bx bx-sun' id="darkLight"></i> -->
-
-        <!-- NOTIFICACIONES -->
-        <li class="nav-item dropdown dropdown-sin-triangulo " id="contenNoti">
-            <a class="dropdown-toggle conten-icons" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class='bx bx-bell'></i>
-                <span class="badge badge-warning contarNoti bg-success" id="contadorNoti"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-xxlg dropdown-menu-right" style="left: inherit; right: 0px; min-width: 400px;" id="subContentNofi">
-                <div class="container-fluid " id="conten-notificaciones">
-                </div>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">Ver todas las notificaciones</a>
-            </div>
-        </li>
-
-        <!-- foto de perfil -->
-        <li class="nav-item user-img dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="" class="profile nav-item dropdown dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" />
-                <!-- <span class="ms-2 d-none d-md-inline"></span> -->
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" id="cerrarSession">Cerrar Sesion</a></li>
-            </ul>
-        </li>
-    </div>
-</nav>
-
-
-<!-- Botón del menú hamburguesa-->
-<div class="menu-btn sidebar-btn" id="sidebar-btn">
-    <i class='bx bx-menu'></i>
-    <i class='bx bx-x'></i>
-
-</div>
-
-<div class="dark-mode-btn" id="dark-mode-btn">
-    <i class='bx bx-moon'></i>
-    <i class='bx bx-sun'></i>
-</div>
-<!-- Sidebar del menú minimize-->
-<div class="custom-sidebar app-sidebar " id="sidebar">
-    <!-- Header del menú -->
-    <div class="header">
-        <!-- Botón del menú -->
-        <div class="menu-btn" id="menu-btn">
-            <i class='bx bx-chevron-left'></i>
+<!-- Sidebar del menú -->
+<div class="app-sidebar" id="sidebar">
+    <!-- Perfil del Usuario -->
+    <div class="sidebar-profile">
+        <div class="user-avatar">
+            <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="User Profile" onerror="this.src='./public/assets/images/icons/favicon.webp'">
         </div>
-        <!-- Logo de la marca -->
-        <div class="brand">
-            <img class="brand-light" src="./public/assets/images/icons/favicon.webp" alt="logo">
-            <img class="brand-dark" src="./public/assets/images/icons/favicon.webp" alt="logo">
-            <!-- Nombre de la marca -->
-            <span class="name-logo">ATLAS</span>
+        <div class="user-info">
+            <h6 class="user-name"><?php echo $_SESSION['user'] ?></h6>
+            <span class="user-email"><?php echo $_SESSION['rol'] ?></span>
+            <div class="user-socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </div>
 
-    <div class="menu-container">
-        <!-- Barra de búsqueda -->
-        <!-- <div class="search">
-            <i class='bx bx-search'></i>
-            <input type="search">
-        </div> -->
-
-        <span class="w-100">
-            <!-- Título del menú -->
-            <h4 class="menu-title">NAVEGACION</h4>
-        </span>
-        <!-- Menú del navegador -->
-        <ul class="menu menu-main">
-            <!-- Inicio -->
-            <li class="menu-item menu-item-static active">
+    <!-- Navegación -->
+    <div class="sidebar-content">
+        <ul class="sidebar-menu">
+            <!-- Dashboard -->
+            <li class="menu-item">
                 <a href="inicio" class="menu-link">
-                    <i class='menu-link-icon fa-regular fa-house'></i>
-                    <!-- Nombre del menú -->
-                    <span>Inicio</span>
+                    <i class="fa-solid fa-chart-simple menu-icon"></i>
+                    <span class="menu-text">Home</span>
                 </a>
             </li>
-            <!-- Empleados -->
-            <li class="menu-item menu-item-dropdown">
+
+            <!-- Pages Category -->
+            <li class="menu-header">Paginas</li>
+
+            <!-- Empleados (Authentication style) -->
+            <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="menu-link-icon fa-regular fa-user-tie"></i>
-                    <!-- Nombre del menú -->
-                    <span>Empleado</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class="fa-solid fa-user-tie menu-icon"></i>
+                    <span class="menu-text">Empleados</span>
+                    <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
-                <!-- Sub menu -->
-                <ul class="sub-menu">
-                    <li><a href="RegistrarEmpleado" class="sub-menu-link">Registrar Empleado</a></li>
-                    <li><a href="Empleados" class="sub-menu-link">Empleados</a></li>
+                <ul class="submenu">
+                    <li><a href="RegistrarEmpleado" class="submenu-link">Registrar</a></li>
+                    <li><a href="Empleados" class="submenu-link">Listado</a></li>
                 </ul>
             </li>
+
             <!-- Familiares -->
-            <li class="menu-item menu-item-dropdown">
+            <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="menu-link-icon fa-regular fa-family"></i>
-                    <!-- Nombre del menú -->
-                    <span>Familiares</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class="fa-solid fa-people-roof menu-icon"></i>
+                    <span class="menu-text">Familiares</span>
+                    <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
-                <!-- Sub menu -->
-                <ul class="sub-menu">
-                    <li><a href="RegistrarFamiliares" class="sub-menu-link">Registrar Familiar</a></li>
-                    <li><a href="Familiares" class="sub-menu-link">Familiares</a></li>
+                <ul class="submenu">
+                    <li><a href="RegistrarFamiliares" class="submenu-link">Registrar</a></li>
+                    <li><a href="Familiares" class="submenu-link">Listado</a></li>
                 </ul>
             </li>
 
-            <li class="menu-item menu-item-dropdown">
+             <!-- Bienestar Social -->
+             <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="menu-link-icon fa-regular fa-handshake-angle"></i>
-                    <!-- Nombre del menú -->
-                    <span>Bienestar Social</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class="fa-solid fa-handshake-angle menu-icon"></i>
+                    <span class="menu-text">Bienestar Social</span>
+                    <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
-                <ul class="sub-menu">
-                    <li><a href="ficha" class="sub-menu-link">Ficha Técnica</a></li>
-                    <li><a href="datosPersonal" class="sub-menu-link">Renuncia</a></li>
+                <ul class="submenu">
+                    <li><a href="ficha" class="submenu-link">Ficha Técnica</a></li>
+                    <li><a href="datosPersonal" class="submenu-link">Renuncia</a></li>
                 </ul>
             </li>
 
-            <li class="menu-item menu-item-dropdown">
+            <!-- Vacaciones -->
+            <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="menu-link-icon fa-regular fa-umbrella-simple"></i>
-                    <!-- Nombre del menú -->
-                    <span>Vacaciones</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class="fa-solid fa-umbrella-beach menu-icon"></i>
+                    <span class="menu-text">Vacaciones</span>
+                    <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
-                <ul class="sub-menu">
-                    <li><a href="ausencia" class="sub-menu-link">Asignar Ausento</a></li>
-                    <li><a href="vacaciones" class="sub-menu-link">Asignar Vacaciones</a></li>
+                <ul class="submenu">
+                    <li><a href="ausencia" class="submenu-link">Asignar Ausento</a></li>
+                    <li><a href="vacaciones" class="submenu-link">Asignar Vacaciones</a></li>
                 </ul>
             </li>
-            <!-- Administrador -->
-            <li class="menu-item menu-item-dropdown">
+
+            <!-- Forms & Tables Category -->
+            <li class="menu-header">ADMINISTRACION</li>
+
+            <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="menu-link-icon  fa-regular fa-cube"></i>
-                    <!-- Nombre del menú -->
-                    <span>Administrador</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class="fa-solid fa-users-gear menu-icon"></i>
+                    <span class="menu-text">Usuarios</span>
+                    <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
-                <ul class="sub-menu">
-                    <li><a href="HistorialUsuarios" class="sub-menu-link">Historial De Usuario</a></li>
-                    <li><a href="RegistrosUsuarios" class="sub-menu-link">Usuarios</a></li>
+                <ul class="submenu">
+                    <li><a href="HistorialUsuarios" class="submenu-link">Historial</a></li>
+                    <li><a href="RegistrosUsuarios" class="submenu-link">Gestión</a></li>
                 </ul>
+            </li>
+            
+             <li class="menu-item">
+                <a href="#" class="menu-link" id="cerrarSession">
+                    <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+                    <span class="menu-text">Cerrar Sesión</span>
+                </a>
             </li>
         </ul>
     </div>
 
-    <!-- Footer del menú -->
-    <div class="footer">
-        <ul class="menu menu-footer">
-            <!-- Notificaciones -->
-            <li class="menu-item menu-item-static">
-                <a href="#" class="menu-link">
-                    <i class="fa-regular fa-bell"></i>
-                    <!-- Nombre del menú -->
-                    <span>Notificaciones</span>
-                </a>
-            </li>
-
-            <li class="menu-item menu-item-static">
-                <a href="#" class="menu-link">
-                    <i class="fa-regular fa-gear "></i>
-                    <!-- Nombre del menú fa-shake-->
-                    <span>Configuraciones</span>
-                </a>
-            </li>
-        </ul>
-
-        <div class="user-menu d-flex mt-3">
-            <div class="user-img">
-                <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="user">
+    <!-- Footer Workspace -->
+    <div class="sidebar-footer">
+        <div class="workspace-info">
+            <div class="workspace-icon">
+                <i class="fa-solid fa-layer-group"></i>
             </div>
-            <div class="user-data">
-                
-                <span class="user-name"><?php echo $_SESSION['user'] ?></span>
-                <span class="user-role"><?php echo $_SESSION['rol'] ?></span>
+            <div class="workspace-details">
+                <span class="workspace-name">ATLAS System</span>
+                <span class="workspace-status">Workspace</span>
             </div>
-
-            <div class="user-icon">
-                <i class='bx bx-exit'></i>
-            </div>
-
+            <i class="fa-utility fa-semibold fa-alarm-clock"></i>
         </div>
     </div>
 </div>
+
+<!-- Overlay para movil -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- Boton toggle movil (flotante o en header externo si existiera, aqui lo pongo flotante por si acaso) -->
+<button class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle">
+    <i class="fa-solid fa-bars"></i>
+</button>

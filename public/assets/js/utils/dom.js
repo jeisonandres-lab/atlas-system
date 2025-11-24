@@ -3,5 +3,5 @@ export function qs(selector, context = document) {
 }
 
 export function qsa(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
+  return context.querySelectorAll(selector);
 }

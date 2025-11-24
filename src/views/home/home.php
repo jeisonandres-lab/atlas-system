@@ -1,5 +1,7 @@
-<?php
+<?php 
+
 use App\Atlas\config\App;
+use App\Atlas\config\SessionManager;
 
 $fechaInicio = new DateTime();
 $fechaFin = new DateTime();
@@ -10,6 +12,10 @@ $meses = [
     9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'
 ];
 
+
+
+// var_dump($_SESSION);
+// exit
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -67,7 +73,7 @@ $meses = [
 
             <!-- Estadisticas cards -->
             <div class="container-fluid">
-                <div class="row g-3">
+                <div class="row">
                     <!-- Card 1: Total Personal -->
                     <div class="col-xl-3 col-md-6">
                         <div class="card custom-card">
@@ -303,6 +309,8 @@ $meses = [
     </div>
 
      <?php require_once App::URL_lAYOUTS . "./scriptsGlobalMenu.php"; ?>
+
+     <script src="./public/assets/js/menu_nuevo.js"></script>
    
 </body>
 
