@@ -1,18 +1,17 @@
+<?php require_once "./src/views/layouts/utils/navbar.php"; ?>
+
 <!-- Sidebar del menú -->
 <div class="app-sidebar" id="sidebar">
-    <!-- Perfil del Usuario -->
-    <div class="sidebar-profile">
-        <div class="user-avatar">
-            <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="User Profile" onerror="this.src='./public/assets/images/icons/favicon.webp'">
-        </div>
-        <div class="user-info">
-            <h6 class="user-name"><?php echo $_SESSION['user'] ?></h6>
-            <span class="user-email"><?php echo $_SESSION['rol'] ?></span>
-            <div class="user-socials">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+    
+     <!-- Footer Workspace -->
+    <div class="sidebar-footer">
+        <div class="workspace-info">
+            <div class="workspace-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="workspace-details">
+                <span class="workspace-name">ATLAS Sistema</span>
+                <span class="workspace-status">Inces</span>
             </div>
         </div>
     </div>
@@ -22,9 +21,9 @@
         <ul class="sidebar-menu">
             <!-- Dashboard -->
             <li class="menu-item">
-                <a href="inicio" class="menu-link">
-                    <i class="fa-solid fa-chart-simple menu-icon"></i>
-                    <span class="menu-text">Home</span>
+                <a href="inicio" class="menu-link active">
+                    <i class="fa-regular fa-house menu-icon"></i>
+                    <span class="menu-text ">Home</span>
                 </a>
             </li>
 
@@ -107,19 +106,23 @@
         </ul>
     </div>
 
-    <!-- Footer Workspace -->
-    <div class="sidebar-footer">
-        <div class="workspace-info">
-            <div class="workspace-icon">
-                <i class="fa-solid fa-layer-group"></i>
-            </div>
-            <div class="workspace-details">
-                <span class="workspace-name">ATLAS System</span>
-                <span class="workspace-status">Workspace</span>
-            </div>
-            <i class="fa-utility fa-semibold fa-alarm-clock"></i>
+     <!-- Perfil del Usuario -->
+    <div class="sidebar-profile">
+        <div class="user-avatar">
+            <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="User Profile" onerror="this.src='./public/assets/images/icons/favicon.webp'">
+        </div>
+        <div class="user-info">
+            <h6 class="user-name"><?php echo $_SESSION['user'] ?></h6>
+            <span class="user-email"><?php echo $_SESSION['rol'] ?></span>
+            <!-- <div class="user-socials mt-3">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div> -->
         </div>
     </div>
+    
 </div>
 
 <!-- Overlay para movil -->

@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #556ee6;
-    --success-color: #34c38f;
+    --primary-color: #2563eb;
+    --success-color: #16a34a;
     --warning-color: #f1b44c;
-    --danger-color: #f46a6a;
+    --danger-color: #dc2626;
     --info-color: #50a5f1;
     --dark-color: #495057;
+    --color-text-gray: #3f404d;
 
-
+    
     --light-color: #f8f9fa;
     --border-color: #e9ecef;
     --color-blanco: #FFFFFF;
@@ -30,6 +31,7 @@
     --body-bg: #f2f2f7;
     --card-color: #fff;
     --border-colors: #e4e7ec;
+    --border-radius: 0.375rem;
     --borcer-colors-style: #ebe6e7;
     --shadow-border: rgba(0, 0, 0, 0.1);
     --shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
