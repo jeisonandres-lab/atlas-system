@@ -13,15 +13,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-:root {
-  
-    
-
-
-    /* Purple from image */
-    --hover-bg: #f3f4f6;
-}
-
 /* Sidebar Container */
 .app-sidebar {
     position: fixed;
@@ -35,8 +26,8 @@
     flex-direction: column;
     z-index: 1050;
     transition: transform 0.3s ease;
-    overflow-y: auto;
-    scrollbar-width: thin;
+    /* overflow-y: auto;
+    scrollbar-width: thin; */
 }
 
 /* Profile Section */
@@ -91,6 +82,8 @@
 .sidebar-content {
     flex: 1;
     padding: 1.5rem 1rem;
+    overflow-y: auto;
+    /* scrollbar-width: thin; */
 }
 
 .sidebar-menu {
@@ -99,12 +92,25 @@
 }
 
 .menu-header {
-    font-size: 0.75rem;
+    font-size: 13px;
     text-transform: uppercase;
-    color: var(--color-text-gray);
+    color: var(--color-text-tercero);
     letter-spacing: 0.05em;
     margin: 1.5rem 0 0.5rem 0.75rem;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.menu-header::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: var(--color-text-tercero);
+    position: relative;
+    /* margin-top: 33px; */
+    top: 12px;
+    left: -28px;
+
 }
 
 .menu-item {
@@ -119,16 +125,21 @@
     color: var(--color-text-gray);
     border-radius: 0.5rem;
     transition: all 0.2s;
-    font-size: 14px;
+    font-size: var(--font-size-lg);
     font-weight: 400;
 }
 
-.menu-link:hover,
+
 .menu-link.active {
     /* border-bottom: 4px solid #1929bb; */
     background-color: #e4e7ff; 
     /* box-shadow: 0 0px 26px 3px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); */
     color: var(--color-azul);
+}
+
+.menu-link:hover {
+    background-color: var(--hover-bg);
+    color: var(--color-text);
 }
 
 .menu-icon {
@@ -148,7 +159,7 @@
 /* Submenu */
 .submenu {
     list-style: none;
-    padding-left: 3rem;
+    padding-left: 1rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -160,18 +171,30 @@
     transition: max-height 0.5s ease-in;
 }
 
-.submenu-link {
+.submenu-link, .submenu-item {
     display: block;
     padding: 0.5rem 0;
     text-decoration: none;
     color: var(--color-text-gray);
-    font-size: 0.9rem;
+    font-size:var(--font-size-lg);
     transition: color 0.2s;
+}
+
+.submenu-item{
+    padding: 2px 0px 2px 1rem;
 }
 
 .submenu-link:hover {
     color: var(--accent-color);
 }
+
+.submenu-item:hover{
+    background-color: var(--hover-bg);
+    color: var(--color-text);
+    border-radius: 0.5rem;
+}
+
+ 
 
 .menu-item.has-submenu.active .menu-arrow {
     transform: rotate(90deg);
@@ -202,7 +225,7 @@
 .workspace-icon {
     width: 32px;
     height: 32px;
-    background-color: var(--color-azul);
+    /* background-color: var(--color-azul); */
     color: #fff;
     border-radius: 6px;
     display: flex;
@@ -294,7 +317,7 @@
 }
 
 /* Custom Scrollbar */
-/* .sidebar-content::-webkit-scrollbar {
+ .sidebar-content::-webkit-scrollbar {
     width: 5px;
 }
 
@@ -309,4 +332,4 @@
 
 .sidebar-content::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
-} */
+} 

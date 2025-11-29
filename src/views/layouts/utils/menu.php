@@ -2,12 +2,45 @@
 
 <!-- Sidebar del menú -->
 <div class="app-sidebar" id="sidebar">
-    
-     <!-- Footer Workspace -->
+
+    <!-- Footer Workspace -->
     <div class="sidebar-footer">
         <div class="workspace-info">
             <div class="workspace-icon">
-                <i class="fa-solid fa-layer-group"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 565.48 618.88">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+
+                            .cls-2 {
+                                clip-path: url(#clip-path);
+                            }
+
+                            .cls-3 {
+                                fill: url(#Degradado_sin_nombre_68);
+                            }
+                        </style>
+                        <clipPath id="clip-path" transform="translate(9.64 1.64)">
+                            <path class="cls-1" d="M376.63.11a56.07,56.07,0,0,1,6.49.26c6.74.78,11.09,5.85,9.61,12.44-2.81,12.49-46.55,168.35-65.08,233.9-.72,2.56-1.58,5.09-2.37,7.63-2.17,7-4.63,11.17-16,11.3-35.33.4-188,.28-229,.13a120.92,120.92,0,0,1-15.45-1c-6.92-.91-11-5.67-11-12.63a29.09,29.09,0,0,1,1.11-7.86c13.85-49,55.76-198.07,62.85-223.57,1.07-3.84,2.27-7.65,3.65-11.4C123.92,2.57,127.83,0,135.65,0,176.31,0,337,.1,376.63.11ZM236.14,308c-2.49,0-5.31-.3-7.38.73a27.36,27.36,0,0,0-8.8,6.59c-1.91,2.3-2.67,5.69-3.52,8.71-8.83,31.42-61.54,219.67-64.79,232.41-2.25,8.85,1.31,14.13,10.32,15.89a45,45,0,0,0,8.44.72q118.25.18,236.49.26c8.12,0,14.12-4.36,16.29-12.12,8.76-31.26,51.57-185.61,64.19-231.54,4.39-16-.19-21.81-16.75-21.83C432,307.75,275.64,308,236.14,308Zm232.2-192.26c-19.32,0-38.64.1-58,0-12.74-.08-16.08,2.16-19.88,14.26-.2.64-.32,1.3-.5,1.94-5.24,18.75-26.95,95.28-32.3,114.87-2.81,10.29,1.5,16.73,11.69,18.33a46.21,46.21,0,0,0,6.95.57q56.48.19,112.94.3c13.06,0,16.57-2.49,20.36-15.19,4-13.55,26.15-90.69,33-115.75,3.55-13-1.44-19.16-14.8-19.24C508,115.67,468.34,115.74,468.34,115.73ZM52.24,307.55c-10.13,0-15.09,3.33-18.2,13-2.6,8.07-24.26,84-32.24,113.89-4.76,17.88-.52,22.81,18,22.91q54.24.28,108.47.38c3,0,6-.15,9-.33,7.85-.46,12.4-4.86,14.46-12.22,2.92-10.42,25.24-88.55,33.4-117.21,3.78-13.26-1.22-20-14.91-20.11C150.7,307.76,72.06,307.57,52.24,307.55Z" />
+                        </clipPath>
+                        <linearGradient id="Degradado_sin_nombre_68" x1="487.42" y1="663.95" x2="78.07" y2="-45.07" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#5464f7" />
+                            <stop offset="0.12" stop-color="#4e5de6" />
+                            <stop offset="0.35" stop-color="#3f4bbb" />
+                            <stop offset="0.67" stop-color="#282e75" />
+                            <stop offset="0.84" stop-color="#1a1e4d" />
+                        </linearGradient>
+                    </defs>
+                    <g id="Capa_2" data-name="Capa 2">
+                        <g id="Capa_1-2" data-name="Capa 1">
+                            <g class="cls-2">
+                                <rect class="cls-3" width="565.48" height="618.88" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </div>
             <div class="workspace-details">
                 <span class="workspace-name">ATLAS Sistema</span>
@@ -33,83 +66,146 @@
             <!-- Empleados (Authentication style) -->
             <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="fa-solid fa-user-tie menu-icon"></i>
+                    <i class="fa-regular fa-user-tie menu-icon"></i>
                     <span class="menu-text">Empleados</span>
                     <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="RegistrarEmpleado" class="submenu-link">Registrar</a></li>
-                    <li><a href="Empleados" class="submenu-link">Listado</a></li>
+                    <li>
+                        <a href="registrarEmpleado" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-user-pen menu-icon"></i>
+                            <span class="submenu-link">Registrar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listadoEmpleado" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-list menu-icon"></i>
+                            <span class="submenu-link">Listado</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
             <!-- Familiares -->
             <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="fa-solid fa-people-roof menu-icon"></i>
+                    <i class="fa-regular fa-people-group menu-icon"></i>
                     <span class="menu-text">Familiares</span>
                     <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="RegistrarFamiliares" class="submenu-link">Registrar</a></li>
-                    <li><a href="Familiares" class="submenu-link">Listado</a></li>
+                    <li>
+                        <a href="registrarFamiliar" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-people-arrows menu-icon"></i>
+                            <span class="submenu-link">Registrar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listadoFamiliar" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-list menu-icon"></i>
+                            <span class="submenu-link">Listado</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
-             <!-- Bienestar Social -->
-             <li class="menu-item has-submenu">
+            <!-- Bienestar Social -->
+            <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="fa-solid fa-handshake-angle menu-icon"></i>
+                    <i class="fa-regular fa-handshake menu-icon"></i>
                     <span class="menu-text">Bienestar Social</span>
                     <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="ficha" class="submenu-link">Ficha Técnica</a></li>
-                    <li><a href="datosPersonal" class="submenu-link">Renuncia</a></li>
+                    <li>
+                        <a href="fichaTecnica" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-paste menu-icon"></i>
+                            <span class="submenu-link">Ficha Tecnica</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="renunciaEmpleado" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-user-xmark menu-icon"></i>
+                            <span class="submenu-link">Renuncia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contratarEmpleado" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-user-tag menu-icon"></i>
+                            <span class="submenu-link">Contratar</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
             <!-- Vacaciones -->
             <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="fa-solid fa-umbrella-beach menu-icon"></i>
+                    <i class="fa-regular fa-umbrella menu-icon"></i>
                     <span class="menu-text">Vacaciones</span>
                     <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="ausencia" class="submenu-link">Asignar Ausento</a></li>
-                    <li><a href="vacaciones" class="submenu-link">Asignar Vacaciones</a></li>
+                    <li>
+                        <a href="asignarAusento" class="d-flex align-items-center submenu-item">
+                            <i class="fa-sharp fa-regular fa-clipboard-list menu-icon"></i>
+                            <span class="submenu-link">Ausento</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="asignarVacaciones" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-island-tropical menu-icon"></i>
+                            <span class="submenu-link">Vacaciones</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
             <!-- Forms & Tables Category -->
             <li class="menu-header">ADMINISTRACION</li>
-
             <li class="menu-item has-submenu">
                 <a href="#" class="menu-link">
-                    <i class="fa-solid fa-users-gear menu-icon"></i>
+                    <i class="fa-regular fa-users menu-icon"></i>
                     <span class="menu-text">Usuarios</span>
                     <i class="fa-solid fa-chevron-right menu-arrow"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="HistorialUsuarios" class="submenu-link">Historial</a></li>
-                    <li><a href="RegistrosUsuarios" class="submenu-link">Gestión</a></li>
+                    <li>
+                        <a href="auditorio" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-clipboard-list-check menu-icon"></i>
+                            <span class="submenu-link">Auditoria</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroUsuarios" class="d-flex align-items-center submenu-item">
+                            <i class="fa-regular fa-user-circle-plus menu-icon"></i>
+                            <span class="submenu-link">Usuario</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
-            
-             <li class="menu-item">
+
+            <li class="menu-item">
                 <a href="#" class="menu-link" id="cerrarSession">
-                    <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+                    <i class="fa-regular fa-arrow-right-from-bracket menu-icon"></i>
                     <span class="menu-text">Cerrar Sesión</span>
+                </a>
+            </li>
+
+            <!-- DATA BASE MANAGEMENT -->
+            <li class="menu-item">
+                <a href="#" class="menu-link" id="cerrarSession">
+                    <i class="fa-regular fa-database menu-icon"></i>
+                    <span class="menu-text">Descargar BD</span>
                 </a>
             </li>
         </ul>
     </div>
 
-     <!-- Perfil del Usuario -->
+    <!-- Perfil del Usuario -->
     <div class="sidebar-profile">
         <div class="user-avatar">
-            <img src="./src/files/photos/<?php echo $_SESSION['cedula']?>.png" alt="User Profile" onerror="this.src='./public/assets/images/icons/favicon.webp'">
+            <img src="./src/files/photos/<?php echo $_SESSION['cedula'] ?>.png" alt="User Profile" onerror="this.src='./public/assets/images/icons/favicon.webp'">
         </div>
         <div class="user-info">
             <h6 class="user-name"><?php echo $_SESSION['user'] ?></h6>
@@ -122,7 +218,7 @@
             </div> -->
         </div>
     </div>
-    
+
 </div>
 
 <!-- Overlay para movil -->

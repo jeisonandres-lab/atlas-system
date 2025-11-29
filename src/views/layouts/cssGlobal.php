@@ -11,7 +11,12 @@
 
 
 <!-- ICONOS DE FONTAWESOME  -->
-<link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all7.1.0.css";?>"/>
+<!-- <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."fontawesome/css/all7.1.0.css";?>"/> -->
+
+    <link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v7.1.0/css/all.css"
+/>
 
 <!-- CSS DE SWEETALERT2 DE ALERTAS -->
 <link rel="stylesheet" href="<?php echo App::URL_LIBRARY."sweetalert2/sweetalert2.min.css";?>"/>

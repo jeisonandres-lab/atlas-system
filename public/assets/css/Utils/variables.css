@@ -26,6 +26,7 @@
     --color-border: #9A9EB2;
     --color-text-primary: #000;
     --color-text-secondary: #3F435D;
+    --color-text-tercero:#a3a3a6;
     --color-tooltip-bg: #2A2E33;
     --color-tooltip-text: #fff;
     --body-bg: #f2f2f7;
@@ -36,6 +37,7 @@
     --shadow-border: rgba(0, 0, 0, 0.1);
     --shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
     --shadow-lg: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.1);
+    --hover-bg: #f3f4f6;
 
     --user-bg-color: #FAFAFC;
     /* Variables de tamaños de fuente */

@@ -26,7 +26,7 @@ if (!isset($_GET['modulo_usuario'])) {
 $authController = new AuthController();
 switch ($_GET['modulo_usuario']) {
     case 'logear':
-        sleep(10);   
+        sleep(1);   
                
         $usuario = $_POST['usuario'] ?? $inputJson['usuario'] ?? null;
         $contrasena = $_POST['password'] ?? $inputJson['password'] ?? null;

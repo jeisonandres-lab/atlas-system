@@ -1,21 +1,13 @@
 <?php 
 
 use App\Atlas\config\App;
-use App\Atlas\config\SessionManager;
+use App\Atlas\helpers\DatosFecha;
 
-$fechaInicio = new DateTime();
-$fechaFin = new DateTime();
 
-$meses = [
-    1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril',
-    5 => 'Mayo', 6 => 'Junio', 7 => 'Julio', 8 => 'Agosto',
-    9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'
-];
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +17,7 @@ $meses = [
 
     <link rel="stylesheet" href="<?php echo App::URL_CSS . "./home.css"; ?>">
     <link rel="stylesheet" href="<?php echo App::URL_CSS . "./Utils/botones.css"; ?>">
+
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper conten-main" id="conten-main">
@@ -160,11 +153,64 @@ $meses = [
                     </div>
                 </div>
             </div>
+
+            <!-- UNIFIED CHART CARD -->
+            <div class="row tablert mb-4">
+                <div class="col-12">
+                    <div class="card dashboard-card">
+                        <div class="card-content">
+                            <div class="row">
+                                <!-- Left Side: Bar Chart (Yearly) -->
+                                <div class="col-12 col-lg-8 border-end-lg">
+                                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                                        <div>
+                                            <div class="text-muted small">Resumen Anual</div>
+                                            <div class="h4 mb-0" id="year-summary-title">Total Archivos</div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <!-- Date Range Picker -->
+                                            <div class="d-flex align-items-center gap-1 bg-light rounded p-1">
+                                                <input type="date" class="form-control form-control-sm border-0 bg-transparent" id="date-start" style="max-width: 110px; font-size: 0.8rem;">
+                                                <span class="text-muted small">-</span>
+                                                <input type="date" class="form-control form-control-sm border-0 bg-transparent" id="date-end" style="max-width: 110px; font-size: 0.8rem;">
+                                                <button class="btn btn-sm btn-white shadow-sm rounded-circle" id="btn-update-range" style="width: 28px; height: 28px; padding: 0; display: flex; align-items: center; justify-content: center;">
+                                                    <i class="fas fa-arrow-right text-primary" style="font-size: 0.8rem;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="chart-year" style="height: 320px;"></div>
+                                </div>
+
+                                <!-- Right Side: Radial Chart (Monthly) -->
+                                <div class="col-12 col-lg-4 ps-lg-4 mt-4 mt-lg-0">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="h6 mb-0">Mensual</div>
+                                        <select class="form-select form-select-sm border-0 bg-light fw-bold text-primary" id="month-select-radial" style="width: auto; cursor: pointer;">
+                                            <option value="current">Este Mes</option>
+                                            <?php echo DatosFecha::getOptionsMeses(); ?>
+                                        </select>
+                                    </div>
+                                    <div id="chart-month" style="height: 280px; display: flex; justify-content: center;"></div>
+                                    <div class="text-center mt-n2">
+                                        <div class="h4 mb-0 fw-bold" id="month-summary-value">Cargando...</div>
+                                        <div class="text-muted small">Archivos Subidos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
         <?php require_once App::URL_lAYOUTS . "./utils/footer.php"; ?>
     </div>
 
      <?php require_once App::URL_lAYOUTS . "./scriptsGlobalMenu.php"; ?>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
+
+<script src="<?php echo App::URL_SCRIPS; ?>home.js"></script>
+</body>
 </html>

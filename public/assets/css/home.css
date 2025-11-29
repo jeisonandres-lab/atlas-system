@@ -151,3 +151,26 @@
     max-width: 50%;
   }
 }
+
+/* Unified Chart Card Styles */
+.tablert .dashboard-card {
+  padding: 1.5rem;
+}
+
+/* Custom border for large screens */
+@media (min-width: 992px) {
+  .border-end-lg {
+    border-right: 1px solid #e5e7eb;
+  }
+}
+
+/* Chart container tweaks */
+#chart-year,
+#chart-month {
+  width: 100%;
+}
+
+/* Input tweaks */
+#custom-date-year {
+  font-size: 0.875rem;
+}
