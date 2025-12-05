@@ -23,7 +23,7 @@
             <div class="col-lg-7 d-none d-lg-flex login-brand-side">
                 <!-- <h1>Your Image</h1> -->
                 <!-- You can replace the h1 with an actual image tag if needed -->
-                <img src="<?php echo App::URL_IMG . 'Banner2.jpg'; ?>" alt="Login Background" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="<?php echo App::URL_IMG . 'hermosos-paisajes-naturales-de-cascadas.jpg'; ?>" alt="Login Background" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
             <!-- Right Side: Login Form -->
@@ -82,7 +82,8 @@
 
     <!-- Password Recovery Modal -->
     <div class="modal fade" id="recoveryModal" tabindex="-1" aria-labelledby="recoveryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-cen
+tered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="recoveryModalLabel">Recuperar Contraseña</h5>
@@ -106,7 +107,7 @@
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <?php require_once App::URL_lAYOUTS . "scriptsGlobal.php"; ?>
+    <?php require_once App::URL_lAYOUTS . "scriptsGlobalMenu.php"; ?>
     <script src="<?php echo App::URL_LIBRARY . "crypto-js/crypto.js"; ?>" defer></script>
     <script type="module" src="<?php echo App::URL_SCRIPS . "login.js" ?>" defer></script>
     <script>

@@ -2,21 +2,21 @@
 
 use App\Atlas\config\SessionManager;
 
-// Normalizar /atlas3 o /atlas3/ a /atlas3/login (redirigir)
+// Normalizar /atlas-system o /atlas-system/ a /atlas-system/login (redirigir)
 
 
-define('BASE_PATH', dirname(__DIR__, 2)); // Esto te da c:\xampp\htdocs\atlas3
+define('BASE_PATH', dirname(__DIR__, 2)); // Esto te da c:\xampp\htdocs\atlas-system
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     // Ruta raíz
-    $r->addRoute('GET', '/atlas3/', '');
-    $r->addRoute('GET', '/atlas3/login', '/src/views/login/login.php');
-    $r->addRoute('GET', '/atlas3/login2', '/src/views/login/login2.php');
+    $r->addRoute('GET', '/atlas-system/', '');
+    $r->addRoute('GET', '/atlas-system/login', '/src/views/login/login.php');
+    $r->addRoute('GET', '/atlas-system/login2', '/src/views/login/login2.php');
     
 
 
     // Ruta para el dashboard
-    $r->addRoute('GET', '/atlas3/inicio', '/src/views/home/home.php');
+    $r->addRoute('GET', '/atlas-system/inicio', '/src/views/home/home.php');
     // Puedes agregar más rutas aquí si lo deseas
 });
 
@@ -47,9 +47,9 @@ switch ($routeInfo[0]) {
 
         if(PHP_SESSION_ACTIVE == 2){SessionManager::start();};
 
-        if ($uri === '/atlas3' || $uri === '/atlas3/') {
+        if ($uri === '/atlas-system' || $uri === '/atlas-system/') {
             // redirección permanente (cambiar a 302 si prefieres temporal)
-            header('Location: /atlas3/login', true, 301);
+            header('Location: /atlas-system/login', true, 301);
             exit;
         }
 
@@ -58,10 +58,10 @@ switch ($routeInfo[0]) {
 
         // // Rutas públicas que no requieren sesión
         // $publicRoutes = [
-        //     '/atlas3/login',
-        //     '/atlas3/',
-        //     '/atlas3',
-        //     '/atlas3/login2'
+        //     '/atlas-system/login',
+        //     '/atlas-system/',
+        //     '/atlas-system',
+        //     '/atlas-system/login2'
         // ];
 
         // // Definir rutas permitidas por rol
@@ -69,13 +69,13 @@ switch ($routeInfo[0]) {
         //     'Administrador' => ['*'], // '*' = acceso a todo
         //     'Medico'        => [
 
-        //         '/atlas3/consultas',
-        //         '/atlas3/paciente',
+        //         '/atlas-system/consultas',
+        //         '/atlas-system/paciente',
         //     ],
         //     'Informatica'   => [
-        //         '/atlas3/paneladmin',
-        //         '/atlas3/inicio',
-        //         '/atlas3/tools',
+        //         '/atlas-system/paneladmin',
+        //         '/atlas-system/inicio',
+        //         '/atlas-system/tools',
         //     ],
         //     // agregar más roles y rutas según necesidad
         // ];
@@ -93,7 +93,7 @@ switch ($routeInfo[0]) {
 
         // // Si no hay sesión activa o no hay rol en la sesión -> redirigir a login
         // if (!SessionManager::haySessionActiva() || empty($userRole)) {
-        //     header('Location: /atlas3/login', true, 302);
+        //     header('Location: /atlas-system/login', true, 302);
         //     exit;
         // }
 

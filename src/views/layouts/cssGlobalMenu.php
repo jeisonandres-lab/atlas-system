@@ -8,3 +8,4 @@
 
 <!-- CSS DE MENU GLOBAL -->
 <link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/menus.css"; ?>">
+<link rel="stylesheet" href="<?php echo App::URL_CSS . "Utils/navbar.css"; ?>">

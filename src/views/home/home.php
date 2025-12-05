@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use App\Atlas\config\App;
 use App\Atlas\helpers\DatosFecha;
@@ -8,17 +8,21 @@ use App\Atlas\helpers\DatosFecha;
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATLAS | HOME</title>
     <?php require_once App::URL_lAYOUTS . "./cssGlobal.php"; ?>
     <?php require_once App::URL_lAYOUTS . "./cssGlobalMenu.php"; ?>
+    <?php require_once App::URL_lAYOUTS . "./cssGlobalDataTables.php"; ?>
+
 
     <link rel="stylesheet" href="<?php echo App::URL_CSS . "./home.css"; ?>">
     <link rel="stylesheet" href="<?php echo App::URL_CSS . "./Utils/botones.css"; ?>">
-
+    
 </head>
+
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper conten-main" id="conten-main">
         <!-- Menu lateral y superior -->
@@ -203,14 +207,155 @@ use App\Atlas\helpers\DatosFecha;
                 </div>
             </div>
 
+            <div class="cotenedor_tabla_usuarios">
+                <div class="card p-3 shadow-sm">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 users-table" id="users__table">
+                            <thead class="table-light small text-muted">
+                                <tr>
+                                    <th scope="col"><input type="checkbox"></th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">CLIENT</th>
+                                    <th scope="col">TOTAL</th>
+                                    <th scope="col">ISSUED DATE</th>
+                                    <th scope="col">BALANCE</th>
+                                    <th scope="col">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="#" class="text-primary">#6542</a></td>
+                                    <td><span class="status-badge status-ok"></span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./src/files/photos/default.png" alt="avatar" class="avatar-sm">
+                                            <div>
+                                                <div class="fw-bold">Jordan Stevenson</div>
+                                                <div class="small text-muted">jordanstevenson10@yahoo.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$4520</td>
+                                    <td>22 Jan 2025</td>
+                                    <td><span class="badge bg-success">PAID</span></td>
+                                    <td class="text-nowrap">
+                                        <button class="btn btn-sm btn-link text-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="#" class="text-primary">#9473</a></td>
+                                    <td><span class="status-badge status-folder"></span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./src/files/photos/default.png" alt="avatar" class="avatar-sm">
+                                            <div>
+                                                <div class="fw-bold">Olivia Peterson</div>
+                                                <div class="small text-muted">olivia.peterson@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$120</td>
+                                    <td>25 Jan 2025</td>
+                                    <td class="text-danger">-$205</td>
+                                    <td class="text-nowrap">
+                                        <button class="btn btn-sm btn-link text-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="#" class="text-primary">#5631</a></td>
+                                    <td><span class="status-badge status-alert"></span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./src/files/photos/default.png" alt="avatar" class="avatar-sm">
+                                            <div>
+                                                <div class="fw-bold">Liam Johnson</div>
+                                                <div class="small text-muted">liam.johnson@mail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$1850</td>
+                                    <td>01 Feb 2025</td>
+                                    <td class="text-danger">-$205</td>
+                                    <td class="text-nowrap">
+                                        <button class="btn btn-sm btn-link text-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="#" class="text-primary">#2571</a></td>
+                                    <td><span class="status-badge status-ok"></span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./src/files/photos/default.png" alt="avatar" class="avatar-sm">
+                                            <div>
+                                                <div class="fw-bold">Sophia Lee</div>
+                                                <div class="small text-muted">sophia.lee@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$755</td>
+                                    <td>26 Jan 2025</td>
+                                    <td><span class="badge bg-success">PAID</span></td>
+                                    <td class="text-nowrap">
+                                        <button class="btn btn-sm btn-link text-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="#" class="text-primary">#9921</a></td>
+                                    <td><span class="status-badge status-clock"></span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./src/files/photos/default.png" alt="avatar" class="avatar-sm">
+                                            <div>
+                                                <div class="fw-bold">Ethan Harris</div>
+                                                <div class="small text-muted">ethan.harris@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$430</td>
+                                    <td>30 Jan 2025</td>
+                                    <td>$666</td>
+                                    <td class="text-nowrap">
+                                        <button class="btn btn-sm btn-link text-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-muted"><i class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </main>
         <?php require_once App::URL_lAYOUTS . "./utils/footer.php"; ?>
     </div>
 
-     <?php require_once App::URL_lAYOUTS . "./scriptsGlobalMenu.php"; ?>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <?php require_once App::URL_lAYOUTS . "./scriptsGlobalMenu.php"; ?>
+    <!-- DataTables JS -->
+    <?php require_once App::URL_lAYOUTS . "./scriptsDataTables.php"; ?>
 
+    <script src="<?php echo App::URL_LIBRARY . "apexcharts/apexcharts.js"; ?>" defer></script>
+    <script src="<?php echo App::URL_SCRIPS; ?>home.js" defer></script>
+    <script src="<?php echo App::URL_SCRIPS; ?>dataUsuerio.js"></script>
 
-<script src="<?php echo App::URL_SCRIPS; ?>home.js"></script>
 </body>
+
 </html>

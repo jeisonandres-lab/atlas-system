@@ -1,4 +1,6 @@
 /* Variables por defecto (puedes mover esto a tu archivo global de variables) */
+@import url(variables.css);
+
 :root {
     --font-size-md: 0.95rem;
 }
@@ -31,17 +33,11 @@
     transition: all 0.2s ease-in-out;
 }
 
-.navbar-search-form .input-group:focus-within {
-    /* background-color: var(--color-bg, #fff);
-    border-color: var(--border-color, #dee2e6);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); */
-}
-
 .navbar-search-form .form-control {
     background-color: transparent;
     border: none;
     padding: 0.6rem 1rem;
-    box-shadow: none;
+    box-shadow: none !important;
     font-size: var(--font-size-md);
     color: var(--color-text-secondary, #495057);
 }
@@ -64,7 +60,7 @@
 }
 
 .navbar-search-form .btn-navbar:hover {
-    color: var(--color-azul, #0d6efd);
+    color: var(--color-azul, #030911);
 }
 
 .dashboard-card {
