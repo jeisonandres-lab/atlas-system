@@ -1,0 +1,89 @@
+
+/* Tabla de usuarios - estilo inspirado en la imagen */
+.cotenedor_tabla_usuarios .card {
+  border-radius: 12px;
+}
+
+.cotenedor_tabla_usuarios .users-table thead th {
+  border-bottom: 1px solid #eef0f3;
+}
+
+.cotenedor_tabla_usuarios .users-table tbody tr {
+  background: #fff;
+}
+
+.cotenedor_tabla_usuarios .avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cotenedor_tabla_usuarios .status-badge {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.cotenedor_tabla_usuarios .status-ok {
+  background: #e6fbf0;
+  box-shadow: inset 0 0 0 6px rgba(34, 197, 94, 0.06);
+}
+
+.cotenedor_tabla_usuarios .status-folder {
+  background: #f3eefc;
+  box-shadow: inset 0 0 0 6px rgba(124, 77, 255, 0.06);
+}
+
+.cotenedor_tabla_usuarios .status-alert {
+  background: #fff1f0;
+  box-shadow: inset 0 0 0 6px rgba(255, 99, 71, 0.06);
+}
+
+.cotenedor_tabla_usuarios .status-clock {
+  background: #fff7ed;
+  box-shadow: inset 0 0 0 6px rgba(245, 158, 11, 0.06);
+}
+
+.cotenedor_tabla_usuarios .table td,
+.cotenedor_tabla_usuarios .table th {
+  vertical-align: middle;
+  border-top: 0;
+}
+
+.cotenedor_tabla_usuarios .table .badge {
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.35rem 0.5rem;
+}
+
+.cotenedor_tabla_usuarios .pagination .page-link {
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.cotenedor_tabla_usuarios .card .input-group .input-group-text {
+  border: 1px solid #eef0f3;
+}
+
+.cotenedor_tabla_usuarios .card .form-control {
+  border: 1px solid #eef0f3;
+}
+
+.cotenedor_tabla_usuarios .card .btn-primary {
+  box-shadow: 0 8px 22px rgba(124, 77, 255, 0.14);
+}
+
+.cotenedor_tabla_usuarios .table-hover tbody tr:hover {
+  background: #fbfbfc;
+}
+
+.cotenedor_tabla_usuarios .card__data__table{
+    padding: 0px !important;
+}
+
+/* MODIFICACIONES DE DATATABLES */
+.dt-layout-full{
+    padding: 0px !important;
+}

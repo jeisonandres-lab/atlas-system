@@ -12,8 +12,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/atlas-system/', '');
     $r->addRoute('GET', '/atlas-system/login', '/src/views/login/login.php');
     $r->addRoute('GET', '/atlas-system/login2', '/src/views/login/login2.php');
-    
-
 
     // Ruta para el dashboard
     $r->addRoute('GET', '/atlas-system/inicio', '/src/views/home/home.php');
